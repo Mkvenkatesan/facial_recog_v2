@@ -4,13 +4,13 @@ from keras.models import model_from_json
 from tensorflow.keras.preprocessing.image import img_to_array
 
 # Load model from JSON file
-json_file = open('D:/vaigaivalley/Projectcentre/dillip/New folder/Facial-emotion-recognition-master/Facial-emotion-recognition-master/top_models/blocks_4.json', 'r')
+json_file = open('fer.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 model = model_from_json(loaded_model_json)
 
 # Load weights and them to model
-model.load_weights('D:/vaigaivalley/Projectcentre/dillip/New folder/Facial-emotion-recognition-master/Facial-emotion-recognition-master/top_models/blocks_4.h5')
+model.load_weights('fer.h5')
 
 face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
