@@ -39,15 +39,9 @@ while True:
         emotions = ['neutral', 'happiness', 'surprise', 'sadness', 'anger', 'disgust', 'fear']
         predicted_emotion = emotions[max_index]
 
-        # Classify into satisfied and not satisfied
-        if predicted_emotion in ['neutral']:
-            customer_status = "neutral"
-        elif if predicted_emotion in ['happiness']:
-            customer_status = "neutral"
-        else:
-            customer_status = "not satisfied"
 
-        cv2.putText(img, f"Customer status: {customer_status}", (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 2)
+
+        cv2.putText(img, predicted_emotion, (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 2)
 
     resized_img = cv2.resize(img, (1000, 700))
     cv2.imshow('Customer Satisfaction Detection', resized_img)
