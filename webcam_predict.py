@@ -13,7 +13,11 @@ model = model_from_json(loaded_model_json)
 model.load_weights('fer.h5')
 
 face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
+# Check if Haar cascade classifier loaded successfully
+if face_haar_cascade.empty():
+    print("Error: Haar cascade classifier not loaded successfully.")
+else:
+    print("Haar cascade classifier loaded successfully.")
 cap = cv2.VideoCapture(0)
 
 while True:
